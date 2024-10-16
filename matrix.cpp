@@ -1,5 +1,6 @@
 #include "matrix.hpp"
 #include <cstddef>
+#include <iostream>
 
 void input(int** t, size_t m, size_t n) {
   for (size_t i = 0; i < m; ++i) {

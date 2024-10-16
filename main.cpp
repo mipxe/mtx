@@ -13,5 +13,5 @@ int main()
   }
   input(t, M, N);
   output(t, M, N);
-  destroy(t, M, N);
+  destroy(t, M);
 }

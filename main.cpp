@@ -7,6 +7,7 @@ int main()
   if (!std::cin) {
     std::cerr << "Not a number\n";
     return 1;
+  }
   int** t  = nullptr;
   try {
     t = creatematrix(M,N);
@@ -14,9 +15,8 @@ int main()
     std::cerr << "Out of memory\n";
     return 1;
   }
-  try {
-    input(t, M, N);
-  } catch (const std::invalid_argument) {
+  input(t, M, N);
+  if (!std::cin) {
     std::cerr << "Not a number\n";
     return 1;
   }

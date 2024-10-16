@@ -1,6 +1,5 @@
 #include <iostream>
-int** creatematrix(size_t m, size_t n);
-void destroy(int** t, size_t m, size_t n);
+#include "matrix.hpp"
 int main()
 {
   size_t M = 0, N = 0;

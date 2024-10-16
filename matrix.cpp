@@ -6,6 +6,9 @@ void input(int** t, size_t m, size_t n) {
   for (size_t i = 0; i < m; ++i) {
     for (size_t j = 0; j < n; ++j) {
       std::cin >> t[i][j];
+      if (!std::cin) {
+        throw;
+      }
     }
   }
 }

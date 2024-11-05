@@ -1,25 +1,28 @@
 #include <iostream>
 #include "matrix.hpp"
+
 int main()
 {
   size_t M = 0, N = 0;
-  std::cin >> M >> N;
-  if (!std::cin) {
+  if (!(std::cin >> M >> N)) {
     std::cerr << "Not a number\n";
     return 1;
   }
-  int** t  = nullptr;
-  try {
-    t = creatematrix(M,N);
-  } catch (const std::bad_alloc & e) {
+  try
+  {
+    Matrix mtx(M, N);
+    mtx.input(std::cin);
+    if (!std::cin) {
+      std::cerr << "Not a number\n";
+      return 1;
+    }
+    mtx.output(std::cout);
+    mtx.changeSize(M + 5, N + 10);
+    mtx.output(std::cout);
+  }
+  catch(const std::bad_alloc & e)
+  {
     std::cerr << "Out of memory\n";
     return 1;
   }
-  input(t, M, N);
-  if (!std::cin) {
-    std::cerr << "Not a number\n";
-    return 1;
-  }
-  output(t, M, N);
-  destroy(t, M);
 }
